@@ -1,0 +1,37 @@
+
+// MY THEME COLORS
+$blue: #1261A0;
+$blue-light: #3895D3;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$primary: $blue;
+$secondary: $blue-light;
+$light: $gray-200;
+$dark: $gray-600;
+$gradient: linear-gradient(to right, $primary 40%, $secondary);
+
+// ACCORDION OVERRIDES
+$accordion-button-padding-y:              1.5rem;
+$accordion-button-padding-x:              1.5rem;
+$accordion-button-bg:                     rgba($secondary, 0.10);
+$accordion-button-active-color:           $blue;
+$accordion-button-active-bg:              rgba($primary, 0.30);
+$accordion-icon-width:                    1.875rem;
+$accordion-icon-color:                    $primary;
+$accordion-icon-active-color:             $secondary;
+$accordion-button-focus-box-shadow:       none;
+$accordion-button-focus-border-color:     none;
+
+// IMPORT BOOTSTRAP
+@import "Bootstrap";
