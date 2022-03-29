@@ -49,40 +49,46 @@
     </nav>
   <section id="shoppingCart" class="shopping-cart mt-5 py-5">
     <div id="content" class="container">
-        <div id="content">
-            <h1>Your Shopping Cart</h1>
-            <form id="shopping-cart" action="cart.html" method="post">
-                <table class="shopping-cart">
-                  <thead>
-                    <tr>
-                        <th scope="col">Item</th>
-                        <th scope="col">Qty</th>
-                        <th scope="col" colspan="2">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  
-                  </tbody>
-                </table>
-                <p id="sub-total">
-                    <strong>Sub Total</strong>: <span id="stotal"></span>
-                </p>
-                <ul id="shopping-cart-actions">
-                    <li>
-                        <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
-                    </li>
-                    <li>
-                        <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
-                    </li>
-                    <li>
-                        <a href="index.html" class="btn">Continue Shopping</a>
-                    </li>
-                    <li>
-                        <a href="checkout.html" class="btn">Go To Checkout</a>
-                    </li>
-                </ul>
-            </form>
-        </div>
+        <h1>Your Order</h1>
+        <table id="checkout-cart" class="shopping-cart">
+          <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          </tbody>
+        </table>
+     <div id="pricing">
+        
+        <p id="shipping">
+            <strong>Shipping</strong>: <span id="sshipping"></span>
+        </p>
+        
+        <p id="sub-total">
+            <strong>Total</strong>: <span id="stotal"></span>
+        </p>
+     </div>
+     
+     <div id="user-details">
+         <h2>Your Data</h2>
+         <div id="user-details-content"></div>
+     </div>
+     
+     
+     
+     
+<form id="paypal-form" action="" method="post">
+<input type="hidden" name="cmd" value="_cart" />
+<input type="hidden" name="upload" value="1" />
+<input type="hidden" name="business" value="" />
+    
+<input type="hidden" name="currency_code" value="" />
+<input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />
+</form>
     </div>
     
   </section>

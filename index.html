@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f23ac17888.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.shop.js"></script>
 </head>
 
 <body>
@@ -85,7 +87,7 @@
     </section>
 
     <section id="portfolio" class="portfolio">
-        <div class="container">
+        <div id="content" class="container">
             <div class="row">
                 <h2>Shop</h2>
                 <div class="heading-line mb-4"></div>
@@ -106,14 +108,21 @@
             </div>
 
             <!--START THE PROTFOLIO ITEMS-->
-            <div class="row">
+            <div id="products" class="row">
                 <div class="col-lg-4 col-md-6 mx-auto my-3 filter other">
                     <div class="portfolio-box">
                         <div class="card">
                             <img src="images/egg-removebg-preview.png" alt="egg" style="width:100%">
                             <h2>Egg</h2>
                             <p class="price text-center">$197.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <!-- <p><button class="btn btn-outline-primary">Add to Cart</button></p> -->
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -124,7 +133,13 @@
                             <img src="images/mug1-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$12.38</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -135,7 +150,13 @@
                             <img src="images/vase6-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$159.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -146,7 +167,13 @@
                             <img src="images/mug4-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$19.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -157,7 +184,13 @@
                             <img src="images/mug2-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$15.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -168,7 +201,13 @@
                             <img src="images/vase1-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$129.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -179,7 +218,13 @@
                             <img src="images/vase5-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Egg</h2>
                             <p class="price text-center">$168.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -190,7 +235,13 @@
                             <img src="images/vase2-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$119.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -201,7 +252,13 @@
                             <img src="images/teapot-removebg-preview.png" alt="teapot" style="width:100%">
                             <h2>Teapot</h2>
                             <p class="price text-center">$199.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -212,7 +269,13 @@
                             <img src="images/vase7-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$139.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -223,7 +286,13 @@
                             <img src="images/vase3-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$149.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -234,7 +303,13 @@
                             <img src="images/vase8-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$127.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -245,7 +320,13 @@
                             <img src="images/mug6-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$11.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -256,7 +337,13 @@
                             <img src="images/vase9-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$189.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -267,7 +354,13 @@
                             <img src="images/mug3-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$13.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -278,7 +371,13 @@
                             <img src="images/vase4-removebg-preview.png" alt="vase" style="width:100%">
                             <h2>Vase</h2>
                             <p class="price text-center">$169.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -289,13 +388,20 @@
                             <img src="images/mug5-removebg-preview.png" alt="mug" style="width:100%">
                             <h2>Mug</h2>
                             <p class="price text-center">$8.99</p>
-                            <p><button class="btn btn-outline-primary">Add to Cart</button></p>
+                            <form class="add-to-cart" action="cart.html" method="post">
+                                <div class="mb-2">
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn btn-outline-primary" /></p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer class="mt-5 py-5">
