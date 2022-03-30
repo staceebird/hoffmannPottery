@@ -12143,6 +12143,22 @@ a {
   font-size: 22px;
 }
 
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #1261A0;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  background-color: #3895D3;
+}
+
 form.add-to-cart div,
 form.add-to-cart p {
   text-align: center;
@@ -12251,6 +12267,70 @@ footer .list-group-item a:hover {
   text-decoration: underline;
 }
 
+.products-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product {
+  width: 300px;
+  border: 1px solid #3895D3, 0.4;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.product img {
+  width: 100%;
+}
+
+/* products list */
+.products-list {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: (4fr)[3];
+      grid-template-columns: repeat(3, 4fr);
+}
+
+.products .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+}
+
 #shopping-cart {
   margin: 1.5em 0;
 }
@@ -12269,29 +12349,15 @@ footer .list-group-item a:hover {
   width: 33.3%;
   border: 1px solid #ddd;
   text-transform: uppercase;
+  color: white;
+  background-color: #1261A0;
 }
 
 .shopping-cart td {
   padding: 0.3em;
   width: 33.3%;
   border: 1px solid #ddd;
-}
-
-.shopping-cart tr:nth-child(even) {
-  background: #fafafa;
-}
-
-.shopping-cart td.pdelete {
-  text-align: center;
-}
-
-.pdelete a,
-.pdelete a:hover {
-  color: #3895D3;
-  text-decoration: none;
-  font-size: 2.5em;
-  display: block;
-  text-align: center;
+  background-color: #dee2e6;
 }
 
 #shopping-cart-actions {
@@ -12304,130 +12370,5 @@ footer .list-group-item a:hover {
 #shopping-cart-actions li {
   display: inline-block;
   margin-right: 1em;
-}
-
-#pricing {
-  padding: 0.5em;
-  margin: 1em 0;
-  background: #fafafa;
-}
-
-#sub-total, #shipping {
-  margin: 1.5em 0;
-  text-align: right;
-}
-
-#sub-total span,
-#shipping span {
-  margin-left: 1em;
-}
-
-#content > h1, #content > .h1,
-#checkout-order-form h2,
-#checkout-order-form .h2 {
-  font-size: 2em;
-  text-align: center;
-}
-
-#pricing #sub-total,
-#pricing #shipping {
-  margin: 1em 0;
-}
-
-#checkout-order-form {
-  margin: 1.5em 0;
-}
-
-#checkout-order-form fieldset {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 1em;
-  margin-bottom: 1.3em;
-}
-
-#checkout-order-form legend {
-  padding: 0.3em;
-  background: #fafafa;
-  font-weight: bold;
-}
-
-#checkout-order-form div {
-  margin-bottom: 1em;
-}
-
-#checkout-order-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.3em;
-  text-align: left;
-}
-
-#checkout-order-form input[type="text"] {
-  width: 200px;
-  display: block;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.3em;
-}
-
-#checkout-order-form select {
-  width: 200px;
-  display: block;
-}
-
-.message {
-  display: block;
-  margin: 0.5em 0;
-  color: #1261A0;
-}
-
-#user-details {
-  margin: 1.5em 0;
-}
-
-#user-details > h2, #user-details > .h2 {
-  text-align: center;
-  font-size: 2em;
-}
-
-#user-details-content {
-  margin: 1.5em 0;
-  padding: 1em;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-#user-details-content .detail {
-  float: left;
-  width: 46%;
-}
-
-#user-details-content .detail.right {
-  float: right;
-}
-
-#user-details-content .detail > h2, #user-details-content .detail > .h2 {
-  text-align: center;
-  font-size: 1.6em;
-  margin-bottom: 0.5em;
-}
-
-#user-details-content ul {
-  margin: 0 0 1em 0;
-  padding: 0;
-  list-style: none;
-}
-
-#user-details-content li {
-  display: block;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #ddd;
-}
-
-#paypal-form {
-  margin: 1.5em 0;
 }
 /*# sourceMappingURL=main.css.map */
