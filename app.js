@@ -1,118 +1,145 @@
-// SELECT ELEMENTS
-const productsEl = document.querySelector(".products");
-const cartItemsEl = document.querySelector(".cart-items");
-const subtotalEl = document.querySelector(".subtotal");
-const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 
-// RENDER PRODUCTS
-function renderProdcuts() {
-  products.forEach((product) => {
-    productsEl.innerHTML += `
-        <div class="item">
-        <div class=" filter ${product.filter}">
-            <div class="portfolio-box">
-                <div class="card">
-                    <img src="${product.imgSrc}" alt="${product.name}" style="width:100%">
-                    <h2>${product.name}</h2>
-                    <p class="price text-center"><small>$</small>${product.price}</p>
-                    <p><button class="btn btn-outline-primary add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button></p>
-                </div>
-            </div>
-        </div>
-        `;
-  });
-}
-renderProdcuts();
+// open cart modal
+const cart = document.querySelector('#cart');
+const cartModalOverlay = document.querySelector('.cart-modal-overlay');
 
-// cart array
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
-updateCart();
-
-// ADD TO CART
-function addToCart(id) {
-  // check if prodcut already exist in cart
-  if (cart.some((item) => item.id === id)) {
-    changeNumberOfUnits("plus", id);
+cart.addEventListener('click', () => {
+  if (cartModalOverlay.style.transform === 'translateX(-200%)'){
+    cartModalOverlay.style.transform = 'translateX(0)';
   } else {
-    const item = products.find((product) => product.id === id);
-
-    cart.push({
-      ...item,
-      numberOfUnits: 1,
-    });
+    cartModalOverlay.style.transform = 'translateX(-200%)';
   }
+})
+// end of open cart modal
 
-  updateCart();
+// close cart modal
+const closeBtn = document.querySelector ('#close-btn');
+
+closeBtn.addEventListener('click', () => {
+  cartModalOverlay.style.transform = 'translateX(-200%)';
+});
+
+cartModalOverlay.addEventListener('click', (e) => {
+  if (e.target.classList.contains('cart-modal-overlay')){
+    cartModalOverlay.style.transform = 'translateX(-200%)'
+  }
+})
+// end of close cart modal
+
+// add products to cart
+const addToCart = document.getElementsByClassName('add-to-cart');
+const productRow = document.getElementsByClassName('product-row');
+
+for (var i = 0; i < addToCart.length; i++) {
+  button = addToCart[i];
+  button.addEventListener('click', addToCartClicked)
 }
 
-// update cart
-function updateCart() {
-  renderCartItems();
-  renderSubtotal();
-
-  // save cart to local storage
-  localStorage.setItem("CART", JSON.stringify(cart));
+function addToCartClicked (event) {
+  button = event.target;
+  var cartItem = button.parentElement;
+  var price = cartItem.getElementsByClassName('product-price')[0].innerText;
+  
+  var imageSrc = cartItem.getElementsByClassName('product-image')[0].src;
+  addItemToCart (price, imageSrc);
+  updateCartPrice()
 }
 
-// calculate and render subtotal
-function renderSubtotal() {
-  let totalPrice = 0,
-    totalItems = 0;
-
-  cart.forEach((item) => {
-    totalPrice += item.price * item.numberOfUnits;
-    totalItems += item.numberOfUnits;
-  });
-
-  subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
-  totalItemsInCartEl.innerHTML = totalItems;
-}
-
-// render cart items
-function renderCartItems() {
-  cartItemsEl.innerHTML = ""; // clear cart element
-  cart.forEach((item) => {
-    cartItemsEl.innerHTML += `
-      <div class="cart-item">
-        <tr>
-            <div class="cart-items-img"><td scope="col" class="text-center item-info" onclick="removeItemFromCart(${item.id})"> <img src="${item.imgSrc}" alt="${item.name}" style="width: 25%;">${item.name}</td></div>
-            <div class="cart-items-price"><td scope="col" colspan="2" class="text-center"><small>$</small>${item.price}</td></div>
-            <div class="cart-items-qty"><td scope="col" class="text-center">
-            <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
-            <div class="number">${item.numberOfUnits}</div>
-            <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-            </td></div>
-        </tr>
-      </div>
-        `;
-  });
-}
-
-// remove item from cart
-function removeItemFromCart(id) {
-  cart = cart.filter((item) => item.id !== id);
-
-  updateCart();
-}
-
-// change number of units for an item
-function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
-
-    if (item.id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus" && numberOfUnits < item.instock) {
-        numberOfUnits++;
-      }
+function addItemToCart (price, imageSrc) {
+  var productRow = document.createElement('div');
+  productRow.classList.add('product-row');
+  var productRows = document.getElementsByClassName('product-rows')[0];
+  var cartImage = document.getElementsByClassName('cart-image');
+  
+  for (var i = 0; i < cartImage.length; i++){
+    if (cartImage[i].src == imageSrc){
+      alert ('This item has already been added to the cart')
+      return;
     }
-
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
-
-  updateCart();
+  }
+  
+  var cartRowItems = `
+  <div class="product-row">
+        <img class="cart-image" src="${imageSrc}" alt="">
+        <span class ="cart-price">${price}</span>
+        <input class="product-quantity" type="number" value="1">
+        <button class="remove-btn">Remove</button>
+        </div>
+        
+      `
+  productRow.innerHTML = cartRowItems;
+  productRows.append(productRow);
+  productRow.getElementsByClassName('remove-btn')[0].addEventListener('click', removeItem)
+  productRow.getElementsByClassName('product-quantity')[0].addEventListener('change', changeQuantity)
+  updateCartPrice()
 }
+// end of add products to cart
+
+// Remove products from cart
+const removeBtn = document.getElementsByClassName('remove-btn');
+for (var i = 0; i < removeBtn.length; i++) {
+  button = removeBtn[i]
+  button.addEventListener('click', removeItem)
+}
+
+function removeItem (event) {
+  btnClicked = event.target
+  btnClicked.parentElement.parentElement.remove()
+  updateCartPrice()
+}
+
+// update quantity input
+var quantityInput = document.getElementsByClassName('product-quantity')[0];
+
+for (var i = 0; i < quantityInput; i++){
+  input = quantityInput[i]
+  input.addEventListener('change', changeQuantity)
+}
+
+function changeQuantity(event) {
+  var input = event.target
+  if (isNaN(input.value) || input.value <= 0){
+    input.value = 1
+  }
+  updateCartPrice()
+}
+// end of update quantity input
+
+// update total price
+function updateCartPrice() {
+  var total = 0
+  for (var i = 0; i < productRow.length; i += 2) {
+    cartRow = productRow[i]
+  var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+  var quantityElement = cartRow.getElementsByClassName('product-quantity')[0]
+  var price = parseFloat(priceElement.innerText.replace('$', ''))
+  var quantity = quantityElement.value
+  total = total + (price * quantity )
+    
+  }
+  document.getElementsByClassName('total-price')[0].innerText =  '$' + total
+
+document.getElementsByClassName('cart-quantity')[0].textContent = i /= 2
+}
+// end of update total price
+
+// purchase items
+const purchaseBtn = document.querySelector('.purchase-btn');
+
+const closeCartModal = document.querySelector('.cart-modal');
+
+purchaseBtn.addEventListener('click', purchaseBtnClicked)
+
+function purchaseBtnClicked () {
+  alert ('Thank you for your purchase');
+  cartModalOverlay.style.transform= 'translateX(-100%)'
+ var cartItems = document.getElementsByClassName('product-rows')[0]
+ while (cartItems.hasChildNodes()) {
+   cartItems.removeChild(cartItems.firstChild)
+   
+ }
+  updateCartPrice()
+}
+// end of purchase items
+
+//alert user if cart is empty

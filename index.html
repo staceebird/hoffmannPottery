@@ -34,20 +34,20 @@
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contactUs.html">Contact Us</a>
+                        <a class="nav-link" href="contactUs.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutUs.html">About Us</a>
+                        <a class="nav-link" href="aboutUs.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shoppingCart.html"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="nav-link" href="shoppingCart.html">Shop</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="intro-section">
+    <section id="home" class="intro-section pb-5">
         <div class="container">
             <div class="row align-items-center text-white">
                 <div class="col-md-6">
@@ -57,8 +57,8 @@
                     <h4>
                         A great place to find quality pottery!
                     </h4>
-                    <a href="contactUs.html">
-                        <button type="button" class="rounded-pill btn-rounded mt-4">Get in Touch
+                    <a href="gallery.html">
+                        <button type="button" class="rounded-pill btn-rounded mt-4">View Gallery
                         <span><i class="fas fa-arrow-right"></i></span>
                     </button></a>
                 </div>
@@ -79,42 +79,60 @@
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#ffffff" fill-opacity="1"
-                d="M0,288L48,282.7C96,277,192,267,288,272C384,277,480,299,576,277.3C672,256,768,192,864,176C960,160,1056,192,1152,218.7C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-            </path>
-        </svg>
     </section>
 
     <section id="portfolio" class="portfolio">
         <div id="content" class="container">
-            <div class="row">
-                <h2>Shop</h2>
-                <div class="heading-line mb-4"></div>
-            </div>
-
-            <!--FILTER BUTTONS-->
-            <div class="row text-center mt-2 mb-4 g-3">
-                <div class="col-md-12">
-                    <button class="btn btn-outline-primary filter-button" type="button" data-filter="all">All</button>
-                    <button class="btn btn-outline-primary filter-button" type="button" data-filter="mugs">Mugs</button>
-                    <button class="btn btn-outline-primary filter-button" type="button"
-                        data-filter="vases">Vases</button>
-                    <button class="btn btn-outline-primary filter-button" type="button"
-                        data-filter="cookware">Cookware</button>
-                    <button class="btn btn-outline-primary filter-button" type="button"
-                        data-filter="other">Other</button>
+            <div class="container">
+                <div class="row align-items-center text-end">
+                    <div class="shop-content col-md-6 mt-4 item">
+                        <a href="shoppingCart.html">
+                            <h3 class="mt-1">
+                                Shop Mugs
+                            </h3>
+                        </a>
+                    </div>
+                    <div class="services-pic col-md-6 mt-4 text-end item-img">
+                        <img src="images/mug1-removebg-preview.png" alt="marketing illustration" class="img-fluid">
+                    </div>
                 </div>
             </div>
 
-            <!--START THE PROTFOLIO ITEMS-->
-
-                    <div class="products">
-                        <!-- render porducts here -->
+            <hr>
+    
+            <div class="container">
+                <div class="row flex-row-reverse align-items-center">
+                    <div class="shop-content col-md-6 mt-4">
+                        <a href="shoppingCart.html">
+                            <h3 class="mt-1">
+                                Shop Vases
+                            </h3>
+                        </a>
                     </div>
+                    <div class="services-pic col-md-6 mt-4 text-start item-img">
+                        <img src="images/vase1-removebg-preview.png" alt="web development illustration" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
     
-    </section>
-    
+            <div class="container">
+                <div class="row align-items-center text-end">
+                    <div class="shop-content col-md-6 mt-4">
+                        <a href="shoppingCart.html">
+                            <h3 class="mt-1">
+                                Shop Cookware
+                            </h3>
+                        </a>
+                    </div>
+                    <div class="services-pic col-md-6 mt-4 text-end item-img">
+                        <img src="images/teapot-removebg-preview.png" alt="cloud hosting illustration" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
     <!-- Footer -->
     <footer class="mt-5 py-5">
@@ -131,7 +149,7 @@
                         <li class="list-group-item"><a href="https://instagram.com/hoffmannpottery?utm_medium=copy_link">Instagram</a></li>
                         <li class="list-group-item"><a href="colterh@hoffmannpottery.com">Email</a></li>
                         <li class="list-group-item"><a href="contactUs.html">Suggestions</a></li>
-                        <li class="list-group-item"><a href="aboutUs.html">About Us</a></li>
+                        <li class="list-group-item"><a href="aboutUs.html">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -176,12 +194,6 @@
 
         });
 
-        const porductsListEl = document.querySelector(".products-list");
-        const seeMoreBtn = document.querySelector(".see-more-btn");
-
-        seeMoreBtn.addEventListener('click', () => {
-            porductsListEl.scrollIntoView({behavior: "smooth"})
-        })
     </script>
 </body>
 
